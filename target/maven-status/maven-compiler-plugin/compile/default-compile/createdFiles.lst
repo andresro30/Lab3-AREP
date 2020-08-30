@@ -1,0 +1,5 @@
+edu\escuelaing\arep\urlutils\URLReader.class
+edu\escuelaing\arep\spark\Spark.class
+edu\escuelaing\arep\httpserver\HttpServer.class
+edu\escuelaing\arep\spark\SparkServer.class
+edu\escuelaing\arep\urlutils\URLScanner.class

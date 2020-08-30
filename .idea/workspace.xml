@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b081acf0-30c1-442d-8f48-3ed6d8b1f945" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/httpserver/HttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/httpserver/HttpServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLScanner.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gQU60iJA2IVta7XAu1xVjjFJCl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab3-AREP" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="edu.escuelaing.arep" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SparkServer">
+    <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.escuelaing.arep.httpserver.HttpServer" />
+      <module name="WebServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.escuelaing.arep.httpserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SparkServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.escuelaing.arep.spark.SparkServer" />
+      <module name="WebServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.escuelaing.arep.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="URLReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.escuelaing.arep.urlutils.URLReader" />
+      <module name="WebServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.escuelaing.arep.httpserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SparkServer" />
+        <item itemvalue="Application.HttpServer" />
+        <item itemvalue="Application.URLReader" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b081acf0-30c1-442d-8f48-3ed6d8b1f945" name="Default Changelist" comment="" />
+      <created>1598046131153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598046131153</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="392" y="164" key="#Notifications" timestamp="1598396463784">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="392" y="164" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1598396463784" />
+    <state x="445" y="24" key="#com.intellij.ide.util.MemberChooser" timestamp="1598283068284">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="445" y="24" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1598283068284" />
+    <state x="398" y="199" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598050316196">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="398" y="199" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1598050316196" />
+    <state x="420" y="95" key="FileChooserDialogImpl" timestamp="1598745587011">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="420" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598745587011" />
+    <state width="1237" height="201" key="GridCell.Tab.0.bottom" timestamp="1598748140593">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="201" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598748140593" />
+    <state width="1237" height="201" key="GridCell.Tab.0.center" timestamp="1598748140593">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="201" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1598748140593" />
+    <state width="1237" height="201" key="GridCell.Tab.0.left" timestamp="1598748140592">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="201" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1598748140592" />
+    <state width="1237" height="201" key="GridCell.Tab.0.right" timestamp="1598748140593">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="201" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1598748140593" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1598744847253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1598744847253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1598744847253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1598744847253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
+    <state x="170" y="0" key="Maven.ArtifactSearchDialog" timestamp="1598049014202">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="170" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1598049014202" />
+    <state x="370" y="90" key="extract.method.dialog" timestamp="1598283606692">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="370" y="90" key="extract.method.dialog/0.0.1280.680@0.0.1280.680" timestamp="1598283606692" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1598283465470">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598283465470" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/httpserver/HttpServer.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/httpserver/HttpServer.java</url>
+          <line>202</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
