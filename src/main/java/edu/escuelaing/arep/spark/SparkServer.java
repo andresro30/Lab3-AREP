@@ -2,9 +2,12 @@ package edu.escuelaing.arep.spark;
 
 import edu.escuelaing.arep.httpserver.HttpServer;
 
-public class SparkServer {
+import java.io.IOException;
 
-    public static void main(String[] args){
+public class SparkServer  {
+
+    public static void main(String[] args) throws IOException {
+
         HttpServer server = new HttpServer();
         server.start();
     }

@@ -1,17 +1,13 @@
 package edu.escuelaing.arep.httpserver;
 
-import spark.utils.IOUtils;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.io.*;
-import java.nio.Buffer;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -22,13 +18,14 @@ public class HttpServer {
     private boolean running;
     private int port;
 
-    public HttpServer() {
-        port = 36000;
-        running = false;
-    }
 
     public HttpServer(int port) {
         this.port = port;
+        running = false;
+    }
+
+    public HttpServer() {
+        this.port = getPort();
         running = false;
     }
 
@@ -210,5 +207,12 @@ public class HttpServer {
             }
         }
         return info;
+    }
+
+    private int getPort() {
+        if (System.getenv("PORT") != null) {
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 36000; // returns default port if heroku-port isn't set (i.e. on localhost)
     }
 }
