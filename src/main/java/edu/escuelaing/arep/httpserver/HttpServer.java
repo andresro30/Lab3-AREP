@@ -93,7 +93,7 @@ public class HttpServer {
         String[] resource = response(request);
         String value = "";
         String type = "";
-
+        String outputLine;
 
         if (resource != null) {
             value = resource[0];
@@ -102,10 +102,17 @@ public class HttpServer {
         }
 
         if(type.equals("jpg") ){
-            getImagen("src/main/resource/images/leon.jpg",out);
+            try {
+                getImagen("src/main/resource/images/"+value+".jpg",out);
+            } catch (Exception e) {
+                outputLine = notFound(value);
+                System.out.println(outputLine);
+                printWriter.println(outputLine);
+                printWriter.close();
+            }
         }
         else{
-            String outputLine = "";
+            String descripcion = "";
             if(type.equals("txt")){
                 //Devolver el contenido del txt
                 outputLine = "HTTP/1.1 200 OK\r\n"
@@ -119,55 +126,71 @@ public class HttpServer {
                         + "</head>\n"
                         + "<body>\n"
                         + "<h1>Bienvenido a tu Servidor Web</h1>\n"
-                        + "<h2>" + value + "</h2>\n"
+                        + "<h2>Archivo " + value + " : </h2>\n"
+                        + "<h2>"+descripcion+"</h2>\n"
                         + "</body>\n"
                         + "</html>\n";
             }
-            else if (type.equals("html")) {
-                outputLine = getIndex("src/main/resource/index.html");
-            } else {
-                outputLine = "HTTP/1.1 404 Not Found\r\n"
-                        + "Content-Type: text/html\r\n"
-                        + "\r\n"
-                        + "<!DOCTYPE html>\n"
-                        + "<html>\n"
-                        + "<head>\n"
-                        + "<meta charset=\"UTF-8\">\n"
-                        + "<title>Web Server</title>\n"
-                        + "</head>\n"
-                        + "<body>\n"
-                        + "<h1>El recurso "+value +" no fue encontrado</h1>\n"
-                        + "</body>\n"
-                        + "</html>\n";
+            else if (type.equals("html") || type.equals("js")) {
+                try {
+                    outputLine = getIndex("src/main/resource/"+value+"."+type,type);
+                } catch (Exception e) {
+                    outputLine = notFound(value);
+                }
             }
+            else
+                outputLine = notFound(value);
+
             System.out.println(outputLine);
             printWriter.println(outputLine);
             printWriter.close();
         }
     }
 
-    private void getImagen(String path, OutputStream out) {
+    private String notFound(String value){
+        String outputLine = "HTTP/1.1 404 Not Found\r\n"
+                + "Content-Type: text/html\r\n"
+                + "\r\n"
+                + "<!DOCTYPE html>\n"
+                + "<html>\n"
+                + "<head>\n"
+                + "<meta charset=\"UTF-8\">\n"
+                + "<title>Web Server</title>\n"
+                + "</head>\n"
+                + "<body>\n"
+                + "<h1>El recurso "+value +" no fue encontrado</h1>\n"
+                + "</body>\n"
+                + "</html>\n";
+        return outputLine;
+    }
+
+    private void getImagen(String path, OutputStream out) throws Exception {
         BufferedImage img = null;
         String output = null;
         try {
             PrintWriter response = new PrintWriter(out, true);
             img = ImageIO.read(new File(path));
             output = "HTTP/1.1 200 OK\r\n"
-                    + "Content-Type: image/jpg\r\n";
+                    + "Content-Type: image/jpeg\r\n";
             response.println(output);
             ImageIO.write(img, "jpg", out);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new Exception("Error: la imagen no fue encontrada");
         }
     }
 
-    private String getIndex(String path) {
+    private String getIndex(String path,String type) throws Exception{
+        System.out.println(path+" "+type);
         StringBuilder outputLine = new StringBuilder();
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(path));
             outputLine.append("HTTP/1.1 200 OK\r\n");
-            outputLine.append("Content-Type: text/html\r\n");
+            if(type.equals("html"))
+                outputLine.append("Content-Type: text/html\r\n");
+            else
+                outputLine.append("Content-Type: application/javascript\r\n");
+
             outputLine.append("\r\n");
             String line = br.readLine();
             while (line != null) {
@@ -175,16 +198,13 @@ public class HttpServer {
                 line = br.readLine();
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Error: Fichero no encontrado");
-            e.printStackTrace();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new Exception("Error: Fichero no encontrado");
         } finally {
             try {
                 if (br != null)
                     br.close();
             } catch (Exception e) {
-                System.out.println("Error al cerrar el fichero");
+                throw new Exception("Error al cerrar el fichero");
             }
         }
         return outputLine.toString();

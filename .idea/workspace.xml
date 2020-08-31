@@ -23,14 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b081acf0-30c1-442d-8f48-3ed6d8b1f945" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resource/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebServer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebServer-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/httpserver/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/httpserver/HttpServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/httpserver/HttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/httpserver/HttpServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/escuelaing/arep/urlutils/URLScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.escuelaing.arep.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.escuelaing.arep.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.escuelaing.arep.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.escuelaing.arep.AppTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +65,9 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Users\May\Documents\Andres\Universidad\Semestre 9\AREP\Lab 3\WebServer\src\main\resource" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="edu.escuelaing.arep" />
     </key>
@@ -164,38 +163,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="420" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598745587011" />
-    <state width="1237" height="201" key="GridCell.Tab.0.bottom" timestamp="1598900599335">
+    <state width="1237" height="201" key="GridCell.Tab.0.bottom" timestamp="1598914574186">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598900599335" />
-    <state width="1237" height="201" key="GridCell.Tab.0.center" timestamp="1598900599335">
+    <state width="1237" height="201" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598914574186" />
+    <state width="1237" height="201" key="GridCell.Tab.0.center" timestamp="1598914574186">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1598900599335" />
-    <state width="1237" height="201" key="GridCell.Tab.0.left" timestamp="1598900599335">
+    <state width="1237" height="201" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1598914574186" />
+    <state width="1237" height="201" key="GridCell.Tab.0.left" timestamp="1598914574186">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1598900599335" />
-    <state width="1237" height="201" key="GridCell.Tab.0.right" timestamp="1598900599335">
+    <state width="1237" height="201" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1598914574186" />
+    <state width="1237" height="201" key="GridCell.Tab.0.right" timestamp="1598914574186">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1598900599335" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1598744847253">
+    <state width="1237" height="201" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1598914574186" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1598914200783">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1598744847253">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598914200783" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1598914200783">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1598744847253">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1598914200783" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1598914200783">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1598744847253">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1598914200783" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1598914200783">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1598744847253" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1598914200783" />
     <state x="170" y="0" key="Maven.ArtifactSearchDialog" timestamp="1598049014202">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -208,16 +207,5 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598283465470" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/httpserver/HttpServer.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
