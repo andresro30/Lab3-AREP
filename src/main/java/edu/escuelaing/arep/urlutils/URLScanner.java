@@ -7,6 +7,10 @@ import java.util.logging.Logger;
 
 public class URLScanner {
 
+    /**
+     * Método encargado de escanear una URL
+     * @param site de tipo String[]
+     */
     public static void scanURL(String site){
         try{
             URL siteUrl= new URL("http://campusvirtual.escuelaing.edu.co/moodle/course/view.php?id=892");

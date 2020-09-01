@@ -18,11 +18,19 @@ import java.util.logging.Logger;
  */
 public class URLReader {
 
+    /**
+     * Método principal de la clase
+     * @param args de tipo String[]
+     */
     public static void main(String[] args) {
         readURL(
                 "http://campusvirtual.escuelaing.edu.co/moodle/course/view.php?id=892");
     }
 
+    /**
+     * Método encargado de leer una url
+     * @param site de tipo String
+     */
     public static void readURL(String site) {
         try {
             URL siteUrl = new URL(site);

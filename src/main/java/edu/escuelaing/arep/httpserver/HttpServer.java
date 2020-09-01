@@ -1,6 +1,9 @@
 package edu.escuelaing.arep.httpserver;
 
 
+import edu.escuelaing.arep.DAO.ArchivoDAO;
+import edu.escuelaing.arep.Model.Archivo;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -13,22 +16,37 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
+/**
+ * Propiedades de la clase HttpServer
+ */
 public class HttpServer {
 
     private boolean running;
     private int port;
 
 
+    /**
+     * Constructor de la clase HttpServer
+     * @param port de tipo int
+     */
     public HttpServer(int port) {
         this.port = port;
         running = false;
     }
 
+
+    /**
+     * Constructor de la clase HttpServer
+     */
     public HttpServer() {
         this.port = getPort();
         running = false;
     }
 
+    /**
+     * Método encargado de iniciar el servidor
+     */
     public void start() {
         try {
             ServerSocket serverSocket = null;
@@ -57,6 +75,11 @@ public class HttpServer {
 
     }
 
+    /**
+     * Método encargado de procesar las peticiones del servidor
+     * @param clientSocket de tipo Socket
+     * @throws IOException
+     */
     public void processRequest(Socket clientSocket) throws IOException {
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
@@ -84,10 +107,20 @@ public class HttpServer {
     }
 
 
+    /**
+     * Método encargado de crear la entidad
+     * @param rawEntry de tipo String
+     * @return
+     */
     private String[] createEntry(String rawEntry) {
         return rawEntry.split(":");
     }
 
+    /**
+     * Método encargado de crear la respuesta del servidor
+     * @param out de tipo OutputStream
+     * @param request de tipo String
+     */
     private void createResponse(OutputStream out, String request) {
         PrintWriter printWriter = new PrintWriter(out);
         String[] resource = response(request);
@@ -112,9 +145,18 @@ public class HttpServer {
             }
         }
         else{
-            String descripcion = "";
+            String descripcion = "El archivo no está en la Base de Datos";
             if(type.equals("txt")){
                 //Devolver el contenido del txt
+                Archivo archivo = null;
+                try {
+                    archivo = new ArchivoDAO().findByName(value);
+                    if(archivo!=null){
+                        descripcion = archivo.getDescripcion();
+                    }
+                } catch (Exception e) {
+                    System.out.println("El archivo no está en la Base de Datos");
+                }
                 outputLine = "HTTP/1.1 200 OK\r\n"
                         + "Content-Type: text/html\r\n"
                         + "\r\n"
@@ -126,8 +168,8 @@ public class HttpServer {
                         + "</head>\n"
                         + "<body>\n"
                         + "<h1>Bienvenido a tu Servidor Web</h1>\n"
-                        + "<h2>Archivo " + value + " : </h2>\n"
-                        + "<h2>"+descripcion+"</h2>\n"
+                        + "<h3>Archivo " + value + " : </h3>\n"
+                        + "<h3>"+descripcion+"</h3>\n"
                         + "</body>\n"
                         + "</html>\n";
             }
@@ -147,6 +189,11 @@ public class HttpServer {
         }
     }
 
+    /**
+     * Método que contiene la respuesta de tipo  notFound
+     * @param value de tipo String
+     * @return respuesta del servidor
+     */
     private String notFound(String value){
         String outputLine = "HTTP/1.1 404 Not Found\r\n"
                 + "Content-Type: text/html\r\n"
@@ -164,6 +211,12 @@ public class HttpServer {
         return outputLine;
     }
 
+    /**
+     * Método encargado de generar la respuesta de archivos tipo imagen
+     * @param path de tipo String
+     * @param out de tipo OutputStream
+     * @throws Exception
+     */
     private void getImagen(String path, OutputStream out) throws Exception {
         BufferedImage img = null;
         String output = null;
@@ -179,6 +232,13 @@ public class HttpServer {
         }
     }
 
+    /**
+     * Méotodo encargado de generar la respuesta de archivos tipo html o js
+     * @param path de tipo String
+     * @param type de tipo String
+     * @return respuesta del servidor
+     * @throws Exception
+     */
     private String getIndex(String path,String type) throws Exception{
         System.out.println(path+" "+type);
         StringBuilder outputLine = new StringBuilder();
@@ -210,6 +270,11 @@ public class HttpServer {
         return outputLine.toString();
     }
 
+    /**
+     * Método encragado de clasificar la información de la petición
+     * @param re de tipo String
+     * @return String[] con la información clasificada
+     */
     private String[] response(String re) {
         String[] info;
         info = null;
@@ -229,6 +294,10 @@ public class HttpServer {
         return info;
     }
 
+    /**
+     * Método encargado de obtener el puerto por donde corre la aplicación
+     * @return puerto
+     */
     private int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
