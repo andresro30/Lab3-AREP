@@ -3,6 +3,7 @@ package edu.escuelaing.arep.httpserver;
 
 import edu.escuelaing.arep.DAO.ArchivoDAO;
 import edu.escuelaing.arep.Model.Archivo;
+import edu.escuelaing.arep.spark.Spark;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -24,23 +25,28 @@ public class HttpServer {
 
     private boolean running;
     private int port;
+    private Spark spark;
 
 
     /**
-     * Constructor de la clase HttpServer
-     * @param port de tipo int
+     * Constructor de la clase
+     * @param port
+     * @param spark
      */
-    public HttpServer(int port) {
+    public HttpServer(int port,Spark spark) {
         this.port = port;
+        this.spark = spark;
         running = false;
     }
 
 
     /**
-     * Constructor de la clase HttpServer
+     * Constructor de la clase
+     * @param spark de tipo Spark
      */
-    public HttpServer() {
+    public HttpServer(Spark spark) {
         this.port = getPort();
+        this.spark = spark;
         running = false;
     }
 
@@ -134,59 +140,42 @@ public class HttpServer {
 
         }
 
-        if(type.equals("jpg") ){
-            try {
-                getImagen("src/main/resource/images/"+value+".jpg",out);
-            } catch (Exception e) {
-                outputLine = notFound(value);
-                System.out.println(outputLine);
-                printWriter.println(outputLine);
-                printWriter.close();
-            }
-        }
-        else{
+        if(type.equals("txt")){
             String descripcion = "El archivo no está en la Base de Datos";
-            if(type.equals("txt")){
-                //Devolver el contenido del txt
-                Archivo archivo = null;
-                try {
-                    archivo = new ArchivoDAO().findByName(value);
-                    if(archivo!=null){
-                        descripcion = archivo.getDescripcion();
-                    }
-                } catch (Exception e) {
-                    System.out.println("El archivo no está en la Base de Datos");
+            Archivo archivo;
+            try {
+                archivo = new ArchivoDAO().findByName(value);
+                if(archivo!=null){
+                    descripcion = archivo.getDescripcion();
                 }
-                outputLine = "HTTP/1.1 200 OK\r\n"
-                        + "Content-Type: text/html\r\n"
-                        + "\r\n"
-                        + "<!DOCTYPE html>\n"
-                        + "<html>\n"
-                        + "<head>\n"
-                        + "<meta charset=\"UTF-8\">\n"
-                        + "<title>Web Server</title>\n"
-                        + "</head>\n"
-                        + "<body>\n"
-                        + "<h1>Bienvenido a tu Servidor Web</h1>\n"
-                        + "<h3>Archivo " + value + " : </h3>\n"
-                        + "<h3>"+descripcion+"</h3>\n"
-                        + "</body>\n"
-                        + "</html>\n";
+            } catch (Exception e) {
+                descripcion = "El archivo no está en la Base de Datos";
             }
-            else if (type.equals("html") || type.equals("js")) {
+
+            if(!descripcion.equals("El archivo no está en la Base de Datos"))
+                outputLine = spark.getResource(value,descripcion);
+            else {
                 try {
-                    outputLine = getIndex("src/main/resource/"+value+"."+type,type);
+                    outputLine = spark.getStaticResourcePath(value,type,out,printWriter);
                 } catch (Exception e) {
                     outputLine = notFound(value);
                 }
             }
-            else
-                outputLine = notFound(value);
-
-            System.out.println(outputLine);
-            printWriter.println(outputLine);
-            printWriter.close();
         }
+        else {
+            try {
+                outputLine = spark.getStaticResourcePath(value,type,out,printWriter);
+            } catch (Exception e) {
+                outputLine = notFound(value);
+            }
+        }
+
+        if(outputLine==null)
+            outputLine = notFound(value);
+
+        System.out.println(outputLine);
+        printWriter.println(outputLine);
+        printWriter.close();
     }
 
     /**
@@ -209,65 +198,6 @@ public class HttpServer {
                 + "</body>\n"
                 + "</html>\n";
         return outputLine;
-    }
-
-    /**
-     * Método encargado de generar la respuesta de archivos tipo imagen
-     * @param path de tipo String
-     * @param out de tipo OutputStream
-     * @throws Exception
-     */
-    private void getImagen(String path, OutputStream out) throws Exception {
-        BufferedImage img = null;
-        String output = null;
-        try {
-            PrintWriter response = new PrintWriter(out, true);
-            img = ImageIO.read(new File(path));
-            output = "HTTP/1.1 200 OK\r\n"
-                    + "Content-Type: image/jpeg\r\n";
-            response.println(output);
-            ImageIO.write(img, "jpg", out);
-        } catch (IOException e) {
-            throw new Exception("Error: la imagen no fue encontrada");
-        }
-    }
-
-    /**
-     * Méotodo encargado de generar la respuesta de archivos tipo html o js
-     * @param path de tipo String
-     * @param type de tipo String
-     * @return respuesta del servidor
-     * @throws Exception
-     */
-    private String getIndex(String path,String type) throws Exception{
-        System.out.println(path+" "+type);
-        StringBuilder outputLine = new StringBuilder();
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(path));
-            outputLine.append("HTTP/1.1 200 OK\r\n");
-            if(type.equals("html"))
-                outputLine.append("Content-Type: text/html\r\n");
-            else
-                outputLine.append("Content-Type: application/javascript\r\n");
-
-            outputLine.append("\r\n");
-            String line = br.readLine();
-            while (line != null) {
-                outputLine.append(line + "\n");
-                line = br.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            throw new Exception("Error: Fichero no encontrado");
-        } finally {
-            try {
-                if (br != null)
-                    br.close();
-            } catch (Exception e) {
-                throw new Exception("Error al cerrar el fichero");
-            }
-        }
-        return outputLine.toString();
     }
 
     /**

@@ -16,7 +16,7 @@ public class SparkServer  {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        HttpServer server = new HttpServer();
+        HttpServer server = new HttpServer(new Spark());
         server.start();
     }
 }
