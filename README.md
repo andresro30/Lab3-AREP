@@ -10,9 +10,35 @@ Para usar esta servidor puede ingresar a esta [página](https://arep-webserver.h
 
 ![]()
 
-Solo debe leer las instrucciones e ingresar el conjunto de números que desee operar. Cuando de click en el botón verá los resultados
+Si desea cargar la pagina html principal del servidor puede añadir a la url del Servidor Web la siguiente línea 
+```
+/index.html
+```
+ 
+ El servidor responderá de la siguiente forma:
+ 
+ ![]()
+ 
+Este servidor está conectado a una base de datos desplegada en heroku y puede traer archivos de tipo txt presentes en ella. Para probar añada la siguiente ruta a la url del servidor Web
+```
+/nombre.txt
+```
+![]()
 
-![](https://github.com/andresro30/SparkWebCalculadora-Lab2AREP/blob/master/images/resultado.PNG)
+```
+/info.txt
+```
+![]()
+
+Si desea cargar archivos .js puede cargar añadir a la url la siguiente línea:
+```
+/index.js
+```
+Otra funcionalidad de este servidor es cargar imagenes en formato jpg , puede probar cargando los siguientes archivos de la misma forma que se están cargando los demás:
+* leon.jpg
+* eci.jpg
+* microsoft.jpg
+
 
 ## Pre-requisitos
 * [Maven](https://maven.apache.org/) : Herramienta encargada de la construcción del proyecto y el manejo de dependencias
