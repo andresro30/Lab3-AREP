@@ -1,5 +1,4 @@
 package edu.escuelaing.arep.spark;
-import edu.escuelaing.arep.httpserver.HttpServer;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -14,8 +13,7 @@ public class Spark {
     public static void get(String path, BiFunction<String,String,String> f)
     {
         //si el servidor no está corriendo , ponerlo a correr
-        //poner f con el nombre de resourcePath en el arreglo de paths funcionales
-
+        //poner f con el nombre de resourcePath en el arreglo de paths funcional
     }
 
     /**
@@ -82,7 +80,7 @@ public class Spark {
                         + "</head>\n"
                         + "<body>\n"
                         + "<h1>Bienvenido a tu Servidor Web</h1>\n"
-                        + "<h3>Archivo " + value + " no tiene está en la Base de Datos </h3>\n"
+                        + "<h3>Archivo " + value + " no está en la Base de Datos </h3>\n"
                         + "</body>\n"
                         + "</html>\n";
             }
@@ -108,15 +106,16 @@ public class Spark {
      * @throws Exception
      */
     private static void getImagen(String path, OutputStream out) throws Exception {
-        BufferedImage img = null;
-        String output = null;
+        BufferedImage img;
         try {
-            PrintWriter response = new PrintWriter(out, true);
             img = ImageIO.read(new File(path));
-            output = "HTTP/1.1 200 OK\r\n"
-                    + "Content-Type: image/jpeg\r\n";
-            response.println(output);
-            ImageIO.write(img, "jpg", out);
+            ByteArrayOutputStream ArrBytes = new ByteArrayOutputStream();
+            DataOutputStream dataOut = new DataOutputStream(out);
+            ImageIO.write(img, "JPG", ArrBytes);
+            dataOut.writeBytes("HTTP/1.1 200 OK\r\n"
+                    + "Content-Type: image/jpeg\r\n"
+                    + "\r\n");
+            dataOut.write(ArrBytes.toByteArray());
         } catch (IOException e) {
             throw new Exception("Error: la imagen no fue encontrada");
         }
