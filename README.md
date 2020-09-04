@@ -8,7 +8,7 @@ Servidor Web que utiliza una versión propia del Framework Spark. Responde a pet
 
 Para usar esta servidor puede ingresar a esta [página](https://arep-webserver.herokuapp.com). Cuando ingrese a ese link debe aparece una pantalla como esta:
 
-![]()
+![](https://github.com/andresro30/Lab3-AREP/blob/master/img/webserver-404.PNG)
 
 Si desea cargar la pagina html principal del servidor puede añadir a la url del Servidor Web la siguiente línea 
 ```
@@ -17,18 +17,18 @@ Si desea cargar la pagina html principal del servidor puede añadir a la url del
  
  El servidor responderá de la siguiente forma:
  
- ![]()
+ ![](https://github.com/andresro30/Lab3-AREP/blob/master/img/webserver-index.PNG)
  
 Este servidor está conectado a una base de datos desplegada en heroku y puede traer archivos de tipo txt presentes en ella. Para probar añada la siguiente ruta a la url del servidor Web
 ```
 /nombre.txt
 ```
-![]()
+![](https://github.com/andresro30/Lab3-AREP/blob/master/img/wb-nombre.PNG)
 
 ```
 /info.txt
 ```
-![]()
+![](https://github.com/andresro30/Lab3-AREP/blob/master/img/wb-info.PNG)
 
 Si desea cargar archivos .js puede cargar añadir a la url la siguiente línea:
 ```
