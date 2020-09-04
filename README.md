@@ -94,7 +94,7 @@ mvn test
 * [Spark](https://spark.apache.org/docs/0.9.1/java-programming-guide.html) : Framwework para desarrollo de aplicaciones web
 * [Git](https://git-scm.com/) : Sistema de control de versiones.
 * [CircleCI](https://circleci.com/) : Integración contínua 
-* [Heroku](https://dashboard.heroku.com/apps) : [![Heroku](https://arep-webserver.herokuapp.com)
+* [Heroku](https://dashboard.heroku.com/apps) : Despliegue contínuo. [![Heroku](https://arep-webserver.herokuapp.com)
 
 * Java : Lenguaje de Programación.
 ## Autor
