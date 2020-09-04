@@ -1,6 +1,6 @@
 # Lab3-AREP
 
-Servidor Web implementado desde cero sin usar frameworks de conexión web. Responde a peticiones de archivos de tipo:
+Servidor Web que utiliza una versión propia del Framework Spark. Responde a peticiones de archivos de tipo:
 * txt
 * html
 * js
